@@ -1,0 +1,32 @@
+[project]
+name = "halluguard-backend"
+version = "0.1.0"
+description = "客服回复幻觉检测系统后端 — 规则层 + LLM 裁判层 + 仲裁层（LangGraph 编排）"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "flask>=3.1",
+    "langchain-openai>=1.2",
+    "langgraph>=1.2",
+    "pydantic-settings>=2.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1",
+    "ruff>=0.14",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# 把 backend/ 加入 sys.path，保证 `import app.*` 在任意平台/CI 生效
+pythonpath = ["."]
+addopts = "-q"
+
+[tool.ruff]
+target-version = "py311"
+include = ["app/**/*.py", "scripts/**/*.py", "tests/**/*.py"]
+
+[tool.ruff.lint]
+# 与 CI 对齐：pycodestyle 关键子集 + pyflakes + bugbear
+select = ["E4", "E7", "E9", "F", "B"]

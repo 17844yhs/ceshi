@@ -1,0 +1,542 @@
+[
+  {
+    "id": "h01",
+    "label": "hallucination",
+    "types": [
+      "C1"
+    ],
+    "type_labels": [
+      "事实矛盾"
+    ],
+    "primary_type": "C1",
+    "severity": "high",
+    "partial": false,
+    "confidence": 0.9,
+    "needs_review": false,
+    "evidence": [
+      "回复称「30天无理由」，KB 记载「7天无理由」"
+    ],
+    "rule_hits": [],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 1
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h02",
+    "label": "hallucination",
+    "types": [
+      "C1"
+    ],
+    "type_labels": [
+      "事实矛盾"
+    ],
+    "primary_type": "C1",
+    "severity": "high",
+    "partial": false,
+    "confidence": 0.9,
+    "needs_review": false,
+    "evidence": [
+      "回复称蓝牙5.3，KB 记载蓝牙5.0"
+    ],
+    "rule_hits": [],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 1
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h03",
+    "label": "hallucination",
+    "types": [
+      "C3"
+    ],
+    "type_labels": [
+      "能力越界"
+    ],
+    "primary_type": "C3",
+    "severity": "high",
+    "partial": false,
+    "confidence": 0.92,
+    "needs_review": false,
+    "evidence": [
+      "KB 声明能力缺失：「无（客服系统未接入物流查询接口）」；回复却声称已执行：「我帮您查了一下，您的包裹目前在南」"
+    ],
+    "rule_hits": [
+      "capability_overreach"
+    ],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h04",
+    "label": "hallucination",
+    "types": [
+      "C1"
+    ],
+    "type_labels": [
+      "事实矛盾"
+    ],
+    "primary_type": "C1",
+    "severity": "medium",
+    "partial": true,
+    "confidence": 0.85,
+    "needs_review": false,
+    "evidence": [
+      "KB 明确「不支持纸质发票」，回复却肯定提供；但回复同时正确说明了 KB 支持的部分（partial）"
+    ],
+    "rule_hits": [
+      "affirm_denied_support"
+    ],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h05",
+    "label": "hallucination",
+    "types": [
+      "C2"
+    ],
+    "type_labels": [
+      "无据虚构"
+    ],
+    "primary_type": "C2",
+    "severity": "high",
+    "partial": false,
+    "confidence": 0.9,
+    "needs_review": false,
+    "evidence": [
+      "回复宣称优惠「满300减50」，KB 优惠活动仅含「满200减20、满500减60」"
+    ],
+    "rule_hits": [
+      "coupon_not_listed"
+    ],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h06",
+    "label": "hallucination",
+    "types": [
+      "C1"
+    ],
+    "type_labels": [
+      "事实矛盾"
+    ],
+    "primary_type": "C1",
+    "severity": "high",
+    "partial": false,
+    "confidence": 0.9,
+    "needs_review": false,
+    "evidence": [
+      "回复宣称真皮/牛皮，KB 记载材质为「PU」系合成材质",
+      "回复称保修为两年，KB 记载保修期6个月"
+    ],
+    "rule_hits": [],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 2
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h07",
+    "label": "hallucination",
+    "types": [
+      "C2"
+    ],
+    "type_labels": [
+      "无据虚构"
+    ],
+    "primary_type": "C2",
+    "severity": "high",
+    "partial": false,
+    "confidence": 0.9,
+    "needs_review": false,
+    "evidence": [
+      "KB 规定退货地址需系统自动匹配后以短信发送，回复却杜撰具体地址「浙江省杭州市西湖区文三路478号」"
+    ],
+    "rule_hits": [
+      "address_disclosure"
+    ],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h08",
+    "label": "hallucination",
+    "types": [
+      "C1"
+    ],
+    "type_labels": [
+      "事实矛盾"
+    ],
+    "primary_type": "C1",
+    "severity": "high",
+    "partial": false,
+    "confidence": 0.96,
+    "needs_review": false,
+    "evidence": [
+      "回复宣称使用「顺丰」，KB 合作快递为「中通、圆通、韵达」",
+      "回复称「48小时内发货」，KB 记载「24小时内发货」"
+    ],
+    "rule_hits": [
+      "courier_not_listed"
+    ],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 1
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h09",
+    "label": "hallucination",
+    "types": [
+      "C2"
+    ],
+    "type_labels": [
+      "无据虚构"
+    ],
+    "primary_type": "C2",
+    "severity": "high",
+    "partial": false,
+    "confidence": 0.85,
+    "needs_review": false,
+    "evidence": [
+      "KB 标注「未标注NFC功能」（未记载≠支持），回复却肯定支持并展开说明"
+    ],
+    "rule_hits": [
+      "affirm_unannotated_feature"
+    ],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h10",
+    "label": "hallucination",
+    "types": [
+      "C3"
+    ],
+    "type_labels": [
+      "能力越界"
+    ],
+    "primary_type": "C3",
+    "severity": "high",
+    "partial": false,
+    "confidence": 0.92,
+    "needs_review": false,
+    "evidence": [
+      "KB 声明能力缺失：「无（客服系统未接入退款进度查询接口）」；回复却声称已执行：「我帮您查了，退款已经在处理中，预」"
+    ],
+    "rule_hits": [
+      "capability_overreach"
+    ],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h11",
+    "label": "hallucination",
+    "types": [
+      "C2"
+    ],
+    "type_labels": [
+      "无据虚构"
+    ],
+    "primary_type": "C2",
+    "severity": "high",
+    "partial": false,
+    "confidence": 0.88,
+    "needs_review": false,
+    "evidence": [
+      "KB 声明「纯线上电商品牌，无线下门店」，回复却宣称「京、上海、广州、深圳都有线下体验店，您可以到店试穿后购买。」"
+    ],
+    "rule_hits": [
+      "online_only_store_claim"
+    ],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h12",
+    "label": "none",
+    "types": [],
+    "type_labels": [],
+    "primary_type": null,
+    "severity": "none",
+    "partial": false,
+    "confidence": 0.8,
+    "needs_review": false,
+    "evidence": [],
+    "rule_hits": [],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h13",
+    "label": "hallucination",
+    "types": [
+      "C4"
+    ],
+    "type_labels": [
+      "安全误导"
+    ],
+    "primary_type": "C4",
+    "severity": "critical",
+    "partial": false,
+    "confidence": 0.95,
+    "needs_review": false,
+    "evidence": [
+      "KB 警示：「意事项：含视黄醇衍生物，孕妇及哺乳期女性建议咨询医生后使用。」；回复绿灯话术：「成分温和，不含酒精香精，孕妇可以放心使用。很多孕妈都在回购这」"
+    ],
+    "rule_hits": [
+      "safety_misguidance"
+    ],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h14",
+    "label": "hallucination",
+    "types": [
+      "C3"
+    ],
+    "type_labels": [
+      "能力越界"
+    ],
+    "primary_type": "C3",
+    "severity": "high",
+    "partial": false,
+    "confidence": 0.92,
+    "needs_review": false,
+    "evidence": [
+      "KB 声明能力缺失：「无（客服系统未接入订单修改接口，需人工后台」；回复却声称已执行：「好的，已帮您修改为新地址：北京市朝阳」"
+    ],
+    "rule_hits": [
+      "capability_overreach"
+    ],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h15",
+    "label": "hallucination",
+    "types": [
+      "C2"
+    ],
+    "type_labels": [
+      "无据虚构"
+    ],
+    "primary_type": "C2",
+    "severity": "high",
+    "partial": false,
+    "confidence": 0.85,
+    "needs_review": false,
+    "evidence": [
+      "KB「品牌介绍中未提及其他品牌关联关系」，回复杜撰「是的，我们是XX品牌旗下的子品牌，共享同样的供应」"
+    ],
+    "rule_hits": [
+      "brand_relation_fabrication"
+    ],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h16",
+    "label": "none",
+    "types": [],
+    "type_labels": [],
+    "primary_type": null,
+    "severity": "none",
+    "partial": false,
+    "confidence": 0.8,
+    "needs_review": false,
+    "evidence": [],
+    "rule_hits": [],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h17",
+    "label": "hallucination",
+    "types": [
+      "C1"
+    ],
+    "type_labels": [
+      "事实矛盾"
+    ],
+    "primary_type": "C1",
+    "severity": "high",
+    "partial": false,
+    "confidence": 0.9,
+    "needs_review": false,
+    "evidence": [
+      "回复宣称接口为「Type-C」，KB 接口类型字段记载「USB-A输出」"
+    ],
+    "rule_hits": [
+      "interface_conflict"
+    ],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h18",
+    "label": "hallucination",
+    "types": [
+      "C3"
+    ],
+    "type_labels": [
+      "能力越界"
+    ],
+    "primary_type": "C3",
+    "severity": "high",
+    "partial": false,
+    "confidence": 0.92,
+    "needs_review": false,
+    "evidence": [
+      "KB 声明能力缺失：「无（客服系统不具备工单升级功能，需转人工处」；回复却声称已执行：「歉给您带来不好的体验。我已经将您的投诉升级为高级工单，会有专属客服」"
+    ],
+    "rule_hits": [
+      "capability_overreach"
+    ],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h19",
+    "label": "hallucination",
+    "types": [
+      "C2"
+    ],
+    "type_labels": [
+      "无据虚构"
+    ],
+    "primary_type": "C2",
+    "severity": "high",
+    "partial": false,
+    "confidence": 0.88,
+    "needs_review": false,
+    "evidence": [
+      "KB 明确「无学生优惠政策」，回复却宣称存在并给出使用入口"
+    ],
+    "rule_hits": [
+      "affirm_denied_policy"
+    ],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  },
+  {
+    "id": "h20",
+    "label": "hallucination",
+    "types": [
+      "C5"
+    ],
+    "type_labels": [
+      "信息遗漏"
+    ],
+    "primary_type": "C5",
+    "severity": "low",
+    "partial": false,
+    "confidence": 0.55,
+    "needs_review": true,
+    "evidence": [
+      "KB 记载用户反馈：「用户评价汇总：约30%的用户反馈偏大半码，建议脚瘦的用户选小」；回复绝对化断言：「这款鞋尺码标准，不偏大也不偏小。按照您」，遗漏关键限定信息"
+    ],
+    "rule_hits": [
+      "omission_absolute_claim"
+    ],
+    "judge_fallback": false,
+    "judge_raw": {
+      "engine": "simulated",
+      "reasoning": "确定性启发式模拟裁判",
+      "hits": 0
+    },
+    "mode": "mock"
+  }
+]
